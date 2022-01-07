@@ -1,0 +1,18 @@
+SELECT
+    -- Select country name and the no_matches
+    country.name AS country_name,
+    SUM(
+        CASE
+            WHEN (matches.away_goal + matches.home_goal) >= 5 THEN 1 ELSE 0
+        END
+    ) AS no_matches
+FROM
+    country
+-- Inner join the subquery onto country
+-- Select the country id and match id columns
+INNER JOIN matches
+ON country.id = matches.country_id
+GROUP BY 
+    country.name
+ORDER BY
+    no_matches DESC, country_name ASC;

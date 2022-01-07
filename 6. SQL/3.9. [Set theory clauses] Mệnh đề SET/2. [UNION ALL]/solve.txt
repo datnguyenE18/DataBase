@@ -1,0 +1,22 @@
+SELECT 
+q.NAME  AS names
+FROM (
+    --Find the last 5 employees who were hired recently from pr_department
+    (SELECT name, 1 as stt
+    FROM pr_department p
+    ORDER BY date_joined DESC
+    LIMIT 5)
+    UNION ALL
+    --Find the last 5 employees who were hired recently from it_department
+    (SELECT name, 2 stt
+    FROM it_department i
+    ORDER BY date_joined DESC
+    LIMIT 5)
+    UNION ALL
+    --Find the last 5 employees who were hired recently from hr_department
+    (SELECT name, 3 as stt
+    FROM hr_department h
+    ORDER BY date_joined DESC
+    LIMIT 5)
+) q
+ORDER by q.stt, q.name;

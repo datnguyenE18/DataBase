@@ -1,0 +1,9 @@
+SELECT *
+  FROM economies2010
+    UNION
+-- Select fields from 2015 table
+SELECT *
+  FROM economies2015
+-- Order the table following the code and year column
+ORDER BY 
+code,year asc;

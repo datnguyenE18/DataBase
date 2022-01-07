@@ -1,0 +1,4 @@
+SELECT 
+    -- Replace whitespace in the film title with an underscore
+    Replace(title,' ','_') as title
+FROM film;

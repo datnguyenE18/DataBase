@@ -1,0 +1,6 @@
+CREATE TABLE cars (
+    id INTEGER NOT NULL,    
+    make VARCHAR(64) NOT NULL,
+    model VARCHAR(64) NOT NULL,
+    mpg INTEGER NOT NULL
+)

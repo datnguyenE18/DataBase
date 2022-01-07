@@ -1,0 +1,7 @@
+SELECT
+    -- Consecutive ids
+    ROW_NUMBER() OVER() AS newId,
+    -- oldId from items table
+    id AS oldId
+FROM
+    items;

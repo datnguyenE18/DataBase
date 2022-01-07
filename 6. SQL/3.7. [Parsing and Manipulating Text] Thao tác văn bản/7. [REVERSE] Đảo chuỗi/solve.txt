@@ -1,0 +1,10 @@
+SELECT
+    -- Concatenate uppercase of category to the title in title case
+    upper(name) ||': '|| initcap(title) AS label,
+    -- Convert the description column to lowercase
+    lower(reverse(substr(reverse(left(description,50)) , position(' ' in reverse(left(description,50)))+1))) AS description
+FROM
+    category , film
+    where category.category_id = film.category_id
+ORDER BY
+    label;

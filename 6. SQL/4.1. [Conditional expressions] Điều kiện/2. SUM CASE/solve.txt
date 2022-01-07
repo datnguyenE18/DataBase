@@ -1,0 +1,12 @@
+SELECT 
+    c.name AS country_name,
+    sum(case when m.home_goal> m. away_goal and m.date like '2011-07%' then 1 else 0 end) AS matches_2011_07,
+    sum(case when m.home_goal> m. away_goal and m.date like '2011-08%' then 1 else 0 end) AS matches_2011_08,
+    sum(case when m.home_goal> m. away_goal and m.date like '2011-10%' then 1 else 0 end) AS matches_2011_10
+FROM
+    countries c left join matches m
+ON c.id = m.country_id
+GROUP BY
+    m.country_id, c.name 
+ORDER BY
+    country_name;

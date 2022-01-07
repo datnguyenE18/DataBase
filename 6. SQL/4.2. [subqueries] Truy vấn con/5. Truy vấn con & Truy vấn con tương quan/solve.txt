@@ -1,0 +1,13 @@
+SELECT 
+    -- Select country ID, date, home, and away goals from match
+    country_id,
+    date,
+    home_goal,
+    away_goal
+FROM
+    matches AS a 
+WHERE 
+    -- Filter for matches with the highest number of goals scored
+    home_goal + away_goal = (SELECT MAX(home_goal + away_goal) FROM matches AS b WHERE a.country_id = b.country_id)
+ORDER BY
+    country_id ASC;

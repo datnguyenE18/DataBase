@@ -1,0 +1,13 @@
+WITH Weightlifting_Gold AS (
+  SELECT year, country, gender, medal
+  FROM summer_medals
+  WHERE medal = 'Gold' AND sport = 'Weightlifting'
+)
+
+SELECT
+  Gender, year,country AS champion,
+  -- Fetch the previous year's champion
+  LAG(country, 1, 'N/A') OVER(PARTITION BY gender ORDER BY year) AS last_champion
+FROM Weightlifting_Gold
+ORDER BY
+year ASC, gender;

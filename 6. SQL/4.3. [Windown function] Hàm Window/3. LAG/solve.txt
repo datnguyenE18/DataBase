@@ -1,0 +1,12 @@
+WITH weightlifting_gold AS ( select year,country
+from summer_medals
+  where sport ='Weightlifting' and medal='Gold'
+  order by year
+)
+
+SELECT
+  year,country as  champion,
+
+  lag(country,1,'N/A') over () AS last_champion
+FROM weightlifting_gold
+;

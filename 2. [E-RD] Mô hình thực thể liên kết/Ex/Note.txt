@@ -1,0 +1,2 @@
++ Bên nào nhiều (N) thì khóa bên đó là khóa chính
++ Nếu tất cả đều là N thì phải tạo bảng riêng và tất cả khóa ánh xạ vào bảng đó đều là khóa chính

@@ -1,0 +1,14 @@
+SELECT 
+    date,
+    home_goal,
+    away_goal
+FROM
+    matches
+WHERE (home_goal + away_goal) >= 
+       --Get the average number of goals scored in all the matches      
+            (
+                SELECT
+                AVG(home_goal + away_goal)
+                FROM matches
+            )
+ORDER BY date ASC, home_goal DESC, away_goal DESC

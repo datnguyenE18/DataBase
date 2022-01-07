@@ -1,0 +1,5 @@
+SELECT 
+  -- Select the first 50 characters of description
+substring(description, 1, 50) as short_desc
+FROM 
+  film;

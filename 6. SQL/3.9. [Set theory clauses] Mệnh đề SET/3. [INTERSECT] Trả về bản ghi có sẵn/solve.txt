@@ -1,0 +1,6 @@
+SELECT *
+FROM customer INTERSECT
+SELECT *
+FROM employee
+ORDER BY first_name,
+         last_name;

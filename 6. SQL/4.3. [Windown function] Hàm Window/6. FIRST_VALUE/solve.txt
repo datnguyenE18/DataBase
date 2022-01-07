@@ -1,0 +1,13 @@
+WITH medalists AS (
+    SELECT
+        athlete
+    FROM
+        summer_medals
+    WHERE medal = 'Gold' AND gender = 'Men'
+)
+
+SELECT
+    athlete,
+    FIRST_VALUE(athlete) OVER(ORDER BY athlete ASC) first_athlete
+FROM
+    medalists ;

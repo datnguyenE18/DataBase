@@ -1,0 +1,1 @@
+SELECT postal_code || ', ' || address || ', ' || district || ', ' || city AS address FROM address;

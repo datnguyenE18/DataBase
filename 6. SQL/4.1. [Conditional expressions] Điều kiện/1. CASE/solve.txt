@@ -1,0 +1,12 @@
+SELECT
+    CASE
+    -- In case gender is 'M' then concat King + name
+    WHEN gender = 'M' THEN 'King'||' '||name
+    -- In case gender is 'F' then concat Quen + name
+    WHEN gender = 'F' THEN 'Queen'||' '||name
+    END
+AS name
+FROM
+    Successors
+ORDER BY 
+    birthday ASC;

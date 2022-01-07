@@ -1,0 +1,8 @@
+ELECT country, athlete,DENSE_RANK() OVER(PARTITION BY country ORDER BY number_of_medals DESC) rank_n
+FROM (
+    SELECT country, athlete, COUNT(medal) AS number_of_medals
+    FROM summer_medals
+    GROUP BY country, athlete
+) AS sub
+WHERE number_of_medals > 1
+ORDER BY country, rank_n, athlete;

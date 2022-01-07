@@ -1,0 +1,12 @@
+WITH athlete_medals AS (
+  SELECT athlete, COUNT(medal) AS medals
+  FROM summer_medals AS sm
+  GROUP BY athlete
+  HAVING count(medal)>1
+)
+  SELECT
+  athlete,
+  medals,
+  ntile(3) over (order by medals desc,athlete asc ) AS position
+FROM athlete_medals 
+;

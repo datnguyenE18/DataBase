@@ -1,0 +1,9 @@
+SELECT 
+    SUBSTR(first_name, 1, 1) AS letter, 
+    COUNT(customer_id) AS count
+FROM 
+    customer
+GROUP BY 
+    letter
+ORDER BY 
+    letter;

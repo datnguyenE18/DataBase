@@ -1,0 +1,4 @@
+a. Thiết lập một lược đồ ER mô tả CSDL quản lý dự án gồm thông tin về các dự án và các nhân viên. Trong kịch bản này, mỗi nhân viên có thể thực hiện tối đa 10 dự án. Mỗi dự án được thực hiện bởi ít nhất 2 nhân viên. Khi một nhân viên thực hiện một đự án nào đó thì cần phải có một nhân viên khác giám sát quá trình thực hiện đó. Tự bỏ sung các thuộc tính cho các tập thực thể và các liên kết để đảm bảo mỗi tập thực thể có ít nhất 4 thuộc tính, trong đó có ít nhất 1 thuộc tính khoá và 1 thuộc tính dẫn xuắt.
+
+b. Chuyển đổi lược đồ thực thể liên kết ở phần (a) sang tập các lược đồ quan hệ. Chỉ rõ các
+thuộc tính khóa (chính, ngoại) trong các quan hệ, đồng thời biêu diễn các mối liên hệ giữa các khóa.

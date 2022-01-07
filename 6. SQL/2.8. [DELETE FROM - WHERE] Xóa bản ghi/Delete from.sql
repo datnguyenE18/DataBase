@@ -1,0 +1,4 @@
+DELETE FROM 
+	movies
+WHERE
+    film_title NOT IN('ALADDIN CALENDAR', 'AFRICAN EGG');

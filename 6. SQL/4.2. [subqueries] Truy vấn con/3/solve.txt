@@ -1,0 +1,18 @@
+SELECT 
+    l.name AS league_name,
+    -- Select and round the league's total goals
+    round(avg(home_goal + away_goal),2) AS avg_goals,
+    -- Select and round the average total goals
+    (Select round(avg(home_goal + away_goal),2)
+    from matches
+    WHERE date like '2011-07%' or date like '2011-08%') AS overall_avg
+FROM
+    league l right join ( Select *
+                        FROM matches
+                        WHERE date like '2011-07%' or date like '2011-08%') as sub
+on
+    l.country_id = sub.country_id
+GROUP BY
+    sub.country_id, l.name
+ORDER BY
+    l.name, avg_goals desc, overall_avg desc;

@@ -1,0 +1,3 @@
+SELECT * FROM movies 
+WHERE film_title 
+	IN('ALADDIN CALENDAR', 'AFRICAN EGG');

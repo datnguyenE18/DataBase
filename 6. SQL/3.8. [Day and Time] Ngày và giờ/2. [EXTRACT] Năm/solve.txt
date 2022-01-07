@@ -1,0 +1,9 @@
+SELECT 
+    LEFT(EXTRACT(DOW FROM rental_date)::Text,1) AS dayofweek, 
+    COUNT(*) as rentals 
+FROM
+    rental
+GROUP BY
+    dayofweek
+ORDER BY
+    dayofweek ASC, rentals DESC;

@@ -1,0 +1,16 @@
+SELECT 
+    -- Select country ID, date, home, and away goals from match
+    main.country_id AS country_id,
+    main.date AS date,
+    main.home_goal AS home_goal,
+    main.away_goal AS away_goal
+FROM matches AS main
+WHERE 
+    -- Filter the main query by the subquery
+    (home_goal + away_goal) > 
+        (SELECT AVG((sub.home_goal + sub.away_goal))
+         FROM matches AS sub
+         -- Join the main query to the subquery in WHERE
+         WHERE main.country_id = sub.country_id)
+         
+ORDER BY country_id ASC , date ASC , home_goal DESC , away_goal DESC;

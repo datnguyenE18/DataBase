@@ -1,0 +1,10 @@
+SELECT
+    sales_employee,
+    SUM(sale) AS sales,
+    RANK() OVER (ORDER BY SUM(sale) DESC) AS sales_rank
+FROM
+    sales
+GROUP BY
+    sales_employee
+ORDER BY
+    sales DESC ,sales_employee;

@@ -1,0 +1,7 @@
+SELECT name FROM cities
+EXCEPT
+-- Select field(s) from countries
+SELECT capital FROM countries
+-- Order by result
+ORDER BY 
+name ;

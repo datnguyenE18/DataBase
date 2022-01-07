@@ -1,0 +1,5 @@
+SELECT
+TO_DATE(date_str,'YYYY-MM-DD') as date_iso
+FROM
+Documents
+order by id;

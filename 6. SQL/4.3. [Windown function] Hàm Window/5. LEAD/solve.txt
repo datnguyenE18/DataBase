@@ -1,0 +1,14 @@
+WITH swimmer_medalists AS (
+    SELECT year, athlete
+    FROM swimmer_medals
+    WHERE medal = 'Gold'
+)
+
+SELECT
+    -- For each year, fetch the current and future medalists
+    year, athlete, 
+    LEAD(athlete, 2, 'N/A') OVER(ORDER BY year ASC) AS future_champion
+FROM 
+    swimmer_medalists 
+ORDER BY 
+    year;

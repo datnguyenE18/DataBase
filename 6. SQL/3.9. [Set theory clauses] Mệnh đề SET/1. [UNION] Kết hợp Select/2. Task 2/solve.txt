@@ -1,0 +1,4 @@
+select country_code from cities
+union 
+select code from currencies
+order by country_code;

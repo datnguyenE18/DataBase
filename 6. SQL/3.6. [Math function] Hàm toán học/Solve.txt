@@ -1,0 +1,10 @@
+SELECT
+    pos1.id as id1,
+    (SELECT pos2.id
+        FROM positions pos2
+        WHERE pos1.id <> pos2.id
+        ORDER BY sqrt(power((pos2.x - pos1.x),2)+ power((pos2.y - pos1.y),2))
+        LIMIT 1
+        ) AS id2
+FROM
+    positions pos1;

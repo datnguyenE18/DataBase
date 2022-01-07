@@ -1,0 +1,6 @@
+SELECT
+    LPAD(postal_code::text,8,'0') as zip
+FROM
+    customers
+ORDER BY
+    zip;

@@ -1,0 +1,5 @@
+SELECT 
+    id AS id, 
+    -- Format the value of title column
+    TRIM(Initcap(regexp_replace(title,'\s+',' ','g'))) AS title
+FROM titles;

@@ -1,0 +1,10 @@
+SELECT 
+    -- Select the season and max goals scored in a match
+    season,
+    max(home_goal+away_goal) AS max_goals,
+    -- Select the overall max goals scored in a match
+    (Select
+     max(home_goal+away_goal)
+    FROM matches) AS overall_max_goals
+FROM matches
+GROUP BY season ORDER BY season;

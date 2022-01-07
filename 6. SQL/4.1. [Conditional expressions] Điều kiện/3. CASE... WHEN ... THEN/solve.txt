@@ -1,0 +1,20 @@
+SELECT 
+    c.name AS country_name,
+    COALESCE (ROUND(AVG(CASE 
+        WHEN m.month = '07' AND home_goal = away_goal THEN 1 
+        WHEN m.month = '07' THEN 0
+        ELSE NULL END)*100)||'%','0%') AS ties_2011_07,
+    COALESCE (ROUND(AVG(CASE 
+        WHEN m.month = '08' AND home_goal = away_goal THEN 1
+        WHEN m.month = '08' THEN 0
+        ELSE NULL END)*100)||'%','0%') AS ties_2011_08
+FROM
+    countries c
+LEFT JOIN (
+        SELECT 
+        country_id, 
+        SUBSTR(date,6,2) AS month, 
+        home_goal, away_goal FROM matches) m
+ON c.id = m.country_id
+GROUP BY c.name
+ORDER BY country_name;

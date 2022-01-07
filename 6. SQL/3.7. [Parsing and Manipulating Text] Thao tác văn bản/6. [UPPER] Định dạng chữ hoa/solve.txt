@@ -1,0 +1,10 @@
+SELECT
+    -- Concatenate uppercase of category to the title in title case
+    UPPER(name)||': '||INITCAP(title) AS label,
+    -- Convert the description column to lowercase
+    Lower(description) AS description
+FROM
+    category JOIN film 
+    ON category.category_id = film.category_id
+ORDER BY
+    label;

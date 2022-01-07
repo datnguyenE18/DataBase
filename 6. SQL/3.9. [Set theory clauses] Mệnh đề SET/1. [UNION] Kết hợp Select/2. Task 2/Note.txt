@@ -1,0 +1,1 @@
+UNION cũng có thể được sử dụng để xác định tất cả các lần xuất hiện của một trường trên nhiều bảng. Ngoài ra, nếu chúng ta UNION hai cột có tên khác nhau, bảng kết quả sẽ trả về tên cột của bảng đầu tiên ta thực hiện UNION.

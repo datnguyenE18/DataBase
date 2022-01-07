@@ -1,0 +1,5 @@
+SELECT 
+    -- Select only the street name from the address table
+    SUBSTR(address, POSITION(' ' IN address) + 1, LENGTH(address)) AS address
+FROM 
+    address;

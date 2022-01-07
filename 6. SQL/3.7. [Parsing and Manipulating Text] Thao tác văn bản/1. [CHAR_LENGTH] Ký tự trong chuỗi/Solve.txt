@@ -1,0 +1,4 @@
+SELECT 
+    -- Select the title and description and determine the desc_len columns
+    title,description,char_length(description) as desc_len
+FROM film;
